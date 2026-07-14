@@ -61,7 +61,6 @@ export default function Image() {
               justifyContent: "center",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={OG_LOGO_DATA_URI} width={40} height={40} alt="" />
           </div>
           <span style={{ fontSize: 28, fontWeight: 700, color: "#1C1712" }}>

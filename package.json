@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "next": "15.1.0",
+    "next": "15.5.20",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "@next/mdx": "^15.1.0",
@@ -41,6 +41,11 @@
     "unist-util-visit": "^5.0.0",
     "unified": "^11.0.0"
   },
+  "overrides": {
+    "next": {
+      "postcss": "^8.5.16"
+    }
+  },
   "devDependencies": {
     "@types/node": "^22",
     "@types/react": "^19",
@@ -52,7 +57,7 @@
     "postcss": "^8",
     "autoprefixer": "^10.0.1",
     "eslint": "^9",
-    "eslint-config-next": "15.1.0",
+    "eslint-config-next": "15.5.20",
     "@types/unist": "^3.0.0"
   }
 }
