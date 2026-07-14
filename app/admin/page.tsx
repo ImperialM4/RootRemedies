@@ -4,8 +4,8 @@ import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import {
   Users, Eye, Clock, TrendingUp, FileText, Leaf,
-  Search, ThumbsUp, Play, Download, RefreshCw, LogOut,
-  Globe, MousePointerClick, BarChart2,
+  ThumbsUp, Play, Download, RefreshCw, LogOut,
+  MousePointerClick,
 } from "lucide-react";
 import type { DashboardData, AnalyticsPeriod } from "@/lib/analytics/types";
 

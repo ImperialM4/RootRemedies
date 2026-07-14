@@ -7,7 +7,6 @@
 
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
 import { getAllConditions } from "@/lib/content";
 import { getAllRemedies } from "@/lib/remedies";
 import type { ContentMetrics, TopPage } from "./types";

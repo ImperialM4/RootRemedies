@@ -47,7 +47,7 @@ export default function HomePage() {
             style={{ color: "var(--color-text-body)" }}
           >
             RootRemedies documents traditional home remedies so the knowledge
-            passed down through generations isn't lost. Every remedy is recorded
+            passed down through generations isn&apos;t lost. Every remedy is recorded
             with ingredients, preparation steps, safety notes, and cultural context.
           </p>
 

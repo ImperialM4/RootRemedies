@@ -5,7 +5,6 @@ interface VideoEmbedProps { src: string; title: string; caption?: string; poster
 export function VideoEmbed({ src, title, caption, poster, className }: VideoEmbedProps) {
   return (
     <figure className={cn("my-8 rounded-xl overflow-hidden border border-bark-200 dark:border-bark-700", className)}>
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video
         controls preload="metadata" poster={poster}
         className="w-full aspect-video bg-bark-900"

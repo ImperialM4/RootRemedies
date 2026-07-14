@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getAllConditions, getAllTags } from "@/lib/content";
 import { ConditionCard } from "@/components/condition/ConditionCard";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
@@ -40,7 +41,7 @@ export default async function ConditionsPage({ searchParams }: ConditionsPagePro
           </p>
         </div>
         {(activeTag || activeCategory) && (
-          <a href="/conditions" className="text-sm text-accent hover:opacity-80 underline">Clear filter</a>
+          <Link href="/conditions" className="text-sm text-accent hover:opacity-80 underline">Clear filter</Link>
         )}
       </div>
 
@@ -63,7 +64,7 @@ export default async function ConditionsPage({ searchParams }: ConditionsPagePro
       ) : (
         <div className="py-20 text-center text-muted">
           <p className="text-lg mb-2">No conditions found.</p>
-          <a href="/conditions" className="text-sm text-accent underline">Clear filters</a>
+          <Link href="/conditions" className="text-sm text-accent underline">Clear filters</Link>
         </div>
       )}
     </div>

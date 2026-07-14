@@ -23,14 +23,18 @@ export const MINISEARCH_OPTIONS: ConstructorParameters<typeof MiniSearch>[0] = {
   },
 };
 
+// Internal shape actually fed to MiniSearch: tags flattened from string[] to a
+// single space-joined string, since MiniSearch indexes/tokenizes string fields.
+type IndexableDocument = Omit<SearchDocument, "tags"> & { tags: string };
+
 // ---------------------------------------------------------------------------
 // Server-side: build serialized index (called in API route or build step)
 // ---------------------------------------------------------------------------
 export function createSearchIndex(documents: SearchDocument[]): string {
-  const index = new MiniSearch<SearchDocument>(MINISEARCH_OPTIONS);
+  const index = new MiniSearch<IndexableDocument>(MINISEARCH_OPTIONS);
 
   // Flatten tags array to a string for indexing
-  const docs = documents.map((d) => ({
+  const docs: IndexableDocument[] = documents.map((d) => ({
     ...d,
     tags: d.tags.join(" "),
   }));
