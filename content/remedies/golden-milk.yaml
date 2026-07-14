@@ -1,0 +1,30 @@
+title: "Golden Milk (Turmeric Milk)"
+description: "A warm turmeric milk drink commonly used as a traditional comfort remedy."
+
+ingredients:
+  - item: "Turmeric"
+    amount: "1 teaspoon"
+  - item: "Warm milk"
+    amount: "1 cup"
+  - item: "Honey (optional)"
+    amount: "To taste"
+
+preparationSteps:
+  - step: 1
+    instruction: "Warm the milk until hot but not boiling."
+  - step: 2
+    instruction: "Stir in the turmeric until evenly mixed."
+  - step: 3
+    instruction: "Add honey if desired and stir again."
+
+usageInstructions: "Drink while still warm."
+
+notes: "Stir occasionally while drinking, as turmeric may settle at the bottom."
+
+safetyNotes:
+  - "People with dairy allergies or lactose intolerance should consider an alternative milk."
+
+image: "/images/remedies/golden-milk.jpg"
+imageAlt: "A cup of frothy turmeric milk dusted with turmeric powder, next to a jar of organic turmeric."
+imageWidth: 1100
+imageHeight: 910

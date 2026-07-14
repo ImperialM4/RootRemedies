@@ -1,0 +1,31 @@
+title: "Ginger and Lemon"
+description: "A traditional drink combining ginger and lemon to provide soothing comfort during coughs and congestion."
+
+ingredients:
+  - item: "Fresh ginger"
+    amount: "1 small piece (approximately 1 inch)"
+  - item: "Lemon juice"
+    amount: "1-2 teaspoons"
+  - item: "Warm water"
+    amount: "1 cup"
+
+preparationSteps:
+  - step: 1
+    instruction: "Wash and slice the ginger."
+  - step: 2
+    instruction: "Add ginger to warm water and allow it to steep for several minutes."
+  - step: 3
+    instruction: "Add lemon juice before drinking."
+
+usageInstructions: "Sip the warm ginger and lemon drink slowly."
+
+notes: "This remedy is commonly used for comfort and hydration during illness."
+
+safetyNotes:
+  - "Lemon acidity may irritate some individuals with sensitive stomachs."
+  - "Avoid ingredients that cause allergic reactions."
+
+image: "/images/remedies/ginger-lemon.jpg"
+imageAlt: "A mug of warm ginger extract next to fresh ginger root."
+imageWidth: 1100
+imageHeight: 825

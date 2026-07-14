@@ -1,0 +1,20 @@
+title: "Pieces of Dates"
+description: "A traditional food-based remedy using dates as a nutritious source of energy during illness."
+
+ingredients:
+  - item: "Dates"
+    amount: "2-3 pieces"
+
+preparationSteps:
+  - step: 1
+    instruction: "Wash the dates if needed."
+  - step: 2
+    instruction: "Remove pits if the dates contain them."
+
+usageInstructions: "Eat the dates slowly as a snack during recovery."
+
+notes: "Dates are intended to support nutrition rather than directly treat cough or congestion."
+
+safetyNotes:
+  - "Consume in moderation due to their natural sugar content."
+  - "Avoid if you have a known allergy to dates."

@@ -1,0 +1,29 @@
+title: "Ghee, Cardamom, and Honey"
+description: "A traditional mixture combining ghee, cardamom, and honey to coat and soothe irritated throat tissues."
+
+ingredients:
+  - item: "Ghee"
+    amount: "1 teaspoon"
+  - item: "Honey"
+    amount: "1 teaspoon"
+  - item: "Cardamom powder"
+    amount: "A small pinch"
+
+preparationSteps:
+  - step: 1
+    instruction: "Combine ghee, honey, and cardamom powder in a small bowl."
+  - step: 2
+    instruction: "Mix the ingredients until they form an even consistency."
+
+usageInstructions: "Consume the mixture slowly, allowing it to coat the throat."
+
+notes: "This remedy focuses on temporary throat comfort rather than treating the cause of coughing."
+
+safetyNotes:
+  - "Avoid use if you have allergies to any ingredient."
+  - "Consume in moderation due to the high fat content of ghee."
+
+image: "/images/remedies/ghee-cardamom-honey.jpg"
+imageAlt: "Melted ghee with cardamom seeds and spices in a small dish, next to a jar of ghee and a spoonful of cardamom pods."
+imageWidth: 1100
+imageHeight: 1092

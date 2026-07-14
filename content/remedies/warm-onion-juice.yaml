@@ -1,0 +1,22 @@
+title: "Warm Onion Juice"
+description: "A traditional drink made from onion juice that uses naturally occurring compounds found in onions."
+
+ingredients:
+  - item: "Fresh onion"
+    amount: "1 medium onion"
+
+preparationSteps:
+  - step: 1
+    instruction: "Wash, peel, and cut the onion into small pieces."
+  - step: 2
+    instruction: "Extract juice from the onion using a juicer or by crushing and straining."
+  - step: 3
+    instruction: "Warm the juice slightly before consuming."
+
+usageInstructions: "Drink a small amount of warm onion juice slowly."
+
+notes: "The strong taste and smell of onion juice may make this remedy difficult for some people to consume."
+
+safetyNotes:
+  - "Avoid use if onion causes digestive discomfort or allergic reactions."
+  - "Do not consume excessive amounts."
