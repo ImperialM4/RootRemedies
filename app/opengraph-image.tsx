@@ -2,7 +2,12 @@ import { ImageResponse } from "next/og";
 import { OG_LOGO_DATA_URI } from "@/lib/og-logo";
 
 // Route segment config
-export const runtime = "edge";
+// Runs on the standard Node.js runtime rather than the Edge runtime.
+// The Edge runtime caps deployed function bundles at 1 MB (Hobby) / 2 MB (Pro),
+// which this route's ImageResponse + embedded logo can exceed; Vercel's Node.js
+// runtime has a 250 MB limit instead, and is now the recommended runtime for
+// this kind of route (Edge Functions are deprecated as of 2026).
+export const runtime = "nodejs";
 export const alt = "RootRemedies";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
