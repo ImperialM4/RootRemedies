@@ -48,14 +48,15 @@ export function RemedyCard({ remedy, className }: RemedyCardProps) {
               </div>
             </>
           ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <Image
-                src="/images/brand/logo-mat-fallback.png"
-                alt={`${remedy.title} — photo coming soon`}
-                width={320}
-                height={320}
-                className="w-2/3 max-w-[200px] h-auto opacity-90"
-              />
+            <div
+              className="w-full h-full bg-cover bg-center relative"
+              style={{ backgroundImage: "url(/images/brand/remedy-placeholder.svg)" }}
+            >
+              <div className="absolute inset-x-0 bottom-3.5 flex justify-center">
+                <span className="text-xs sm:text-sm font-serif italic text-[#7A5A45] bg-[#FBF4EC]/85 px-3 py-1 rounded-full shadow-sm">
+                  Photo coming soon
+                </span>
+              </div>
             </div>
           )}
         </div>
