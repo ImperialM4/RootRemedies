@@ -1,0 +1,24 @@
+title: "Mustard Seed Oil Compress"
+description: "An external warming remedy using mustard seeds and oil around the ear area."
+
+ingredients:
+  - item: "Mustard seeds"
+    amount: "1 teaspoon"
+  - item: "Oil"
+    amount: "1 tablespoon"
+
+preparationSteps:
+  - step: 1
+    instruction: "Heat the oil and add the mustard seeds."
+  - step: 2
+    instruction: "Cook the mixture for about one minute."
+  - step: 3
+    instruction: "Allow the mixture to cool until comfortably warm."
+
+usageInstructions: "Massage the warm oil around the swollen area surrounding the ear. Do not place it inside the ear canal."
+
+notes: "This remedy focuses on external warmth and compounds in mustard seeds that have been studied for biological activity."
+
+safetyNotes:
+  - "Do not apply inside the ear canal."
+  - "Discontinue use if skin irritation develops."

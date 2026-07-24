@@ -1,0 +1,22 @@
+title: "Honey and Onion Extract"
+description: "A traditional mixture combining honey and onion extract as an ear discomfort remedy."
+
+ingredients:
+  - item: "Honey"
+    amount: "1 teaspoon"
+  - item: "Onion extract"
+    amount: "1 teaspoon"
+  - item: "Cotton ball"
+    amount: "1"
+
+preparationSteps:
+  - step: 1
+    instruction: "Mix the honey and onion extract until well combined."
+
+usageInstructions: "Place a few drops into the ear and gently cover with a cotton ball."
+
+notes: "Honey and onions contain compounds that have been studied for antimicrobial and anti-inflammatory properties."
+
+safetyNotes:
+  - "Do not use if you have a ruptured eardrum."
+  - "Avoid use if there is bleeding, hearing loss, severe pain, or fever."
