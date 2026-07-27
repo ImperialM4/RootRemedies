@@ -1,0 +1,24 @@
+title: "Fenugreek and Jaggery Drink"
+description: "A warm traditional drink that combines soluble fiber with a natural sweetener."
+
+ingredients:
+  - item: "Crushed fenugreek"
+    amount: "1 teaspoon"
+  - item: "Jaggery"
+    amount: "1 teaspoon"
+  - item: "Warm water"
+    amount: "1 cup"
+
+preparationSteps:
+  - step: 1
+    instruction: "Add the crushed fenugreek and jaggery to the warm water."
+  - step: 2
+    instruction: "Stir until the jaggery dissolves."
+
+usageInstructions: "Drink while still warm."
+
+notes: "Fenugreek is naturally rich in soluble fiber, which absorbs water and helps soften stool."
+
+safetyNotes:
+  - "People with diabetes should monitor jaggery intake."
+  - "Avoid if you have a known allergy to fenugreek."
