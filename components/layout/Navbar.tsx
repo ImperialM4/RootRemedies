@@ -39,13 +39,14 @@ export function Navbar() {
 
   return (
     <>
-      <header className={cn(
-        "sticky top-0 z-40 w-full backdrop-blur-md border-b transition-all duration-200",
-        "bg-white/90 dark:bg-bark-900/90",
-        scrolled
-          ? "shadow-sm border-bark-200 dark:border-bark-800"
-          : "border-transparent"
-      )}>
+      <header
+        className={cn(
+          "sticky top-0 z-40 w-full backdrop-blur-md border-b transition-all duration-200",
+          "bg-white/90 dark:bg-bark-900/90",
+          scrolled ? "border-bark-200 dark:border-bark-800" : "border-transparent"
+        )}
+        style={{ boxShadow: scrolled ? "var(--shadow-header)" : "none" }}
+      >
         <div className="site-container">
           <div className="flex h-16 items-center justify-between gap-4">
 

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Calendar, Clock, User, Tag } from "lucide-react";
 import { formatDate, formatReadingTime } from "@/lib/utils";
+import { getCategoryStyle, categoryNameToSlug } from "@/lib/categories";
 import type { Condition } from "@/types";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { cn } from "@/lib/utils";
@@ -12,27 +13,34 @@ interface ConditionHeaderProps {
 
 export function ConditionHeader({ condition, className }: ConditionHeaderProps) {
   const { frontmatter, readingTime } = condition;
+  const categorySlug = categoryNameToSlug(frontmatter.category);
+  const { color, tint, Icon } = getCategoryStyle(categorySlug);
   return (
-    <header className={cn("mb-10", className)}>
+    <header className={cn("mb-10 animate-fade-up", className)}>
       <Breadcrumbs
         items={[
           { label: "Conditions", href: "/conditions" },
-          { label: frontmatter.category, href: `/categories/${frontmatter.category.toLowerCase().replace(/\s+/g, "-")}` },
+          { label: frontmatter.category, href: `/categories/${categorySlug}` },
           { label: frontmatter.title },
         ]}
         className="mb-6"
       />
 
-      {frontmatter.coverImage && (
+      {frontmatter.coverImage ? (
         <div className="relative w-full aspect-[21/9] rounded-xl overflow-hidden mb-8 bg-bark-100 dark:bg-bark-800">
           <Image src={frontmatter.coverImage} alt={frontmatter.coverImageAlt ?? frontmatter.title}
             fill className="object-cover" priority
             sizes="(max-width:768px) 100vw, (max-width:1200px) 80vw, 900px" />
         </div>
+      ) : (
+        <div className="w-full aspect-[21/9] rounded-xl overflow-hidden mb-8 flex items-center justify-center" style={{ backgroundColor: tint }}>
+          <Icon className="w-16 h-16" style={{ color }} aria-hidden />
+        </div>
       )}
 
-      <div className="mb-3">
-        <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+      <div className="flex items-center gap-2 mb-3">
+        <Icon className="w-4 h-4" style={{ color }} aria-hidden />
+        <span className="text-xs font-semibold uppercase tracking-widest" style={{ color }}>
           {frontmatter.category}
         </span>
       </div>

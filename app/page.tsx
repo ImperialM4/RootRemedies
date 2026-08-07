@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Leaf, ShieldCheck, BookOpen } from "lucide-react";
 import { getAllConditions, getFeaturedConditions, getAllCategories } from "@/lib/content";
+import { getCategoryStyle } from "@/lib/categories";
 import { ConditionCard } from "@/components/condition/ConditionCard";
 
 export default function HomePage() {
@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-bark-50 dark:bg-bark-900 pt-16 pb-20 px-4">
+      <section className="relative overflow-hidden bg-[var(--color-bg-subtle)] dark:bg-bark-900 pt-16 pb-20 px-4">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -54,13 +54,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-up stagger-3">
             <Link
               href="/conditions"
-              className="inline-flex items-center gap-2 bg-sage-600 dark:bg-sage-500 text-white px-6 py-3 rounded-lg font-medium text-sm hover:bg-sage-700 dark:hover:bg-sage-400 transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 bg-sage-600 dark:bg-sage-500 text-white px-6 py-3 rounded-lg font-medium text-sm hover:bg-sage-700 dark:hover:bg-sage-400 active:scale-[0.98] transition-all shadow-sm"
             >
               Browse Conditions <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm transition-colors border border-bark-300 dark:border-bark-600 hover:bg-white dark:hover:bg-bark-800"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm active:scale-[0.98] transition-all border border-bark-300 dark:border-bark-600 hover:bg-white dark:hover:bg-bark-800"
               style={{ color: "var(--color-text-body)" }}
             >
               Why I built this
@@ -106,14 +106,18 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {featured.map((c) => <ConditionCard key={c.slug} condition={c} />)}
+            {featured.map((c, i) => (
+              <div key={c.slug} className={`animate-fade-up stagger-${Math.min(i + 1, 6)}`}>
+                <ConditionCard condition={c} />
+              </div>
+            ))}
           </div>
         </section>
       )}
 
       {/* ── Categories ───────────────────────────────────────────────────── */}
       {categories.length > 0 && (
-        <section className="border-y border-bark-200 dark:border-bark-800 bg-bark-50 dark:bg-bark-900/40">
+        <section className="border-y border-bark-200 dark:border-bark-800 bg-[var(--color-bg-subtle)] dark:bg-bark-900/40">
           <div className="site-container py-16">
             <div className="flex items-center justify-between mb-8">
               <h2 className="font-serif text-2xl font-semibold" style={{ color: "var(--color-text-primary)" }}>
@@ -124,21 +128,29 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-              {categories.map((cat) => (
-                <Link
-                  key={cat.slug}
-                  href={`/categories/${cat.slug}`}
-                  className="group flex flex-col items-center gap-2 p-4 bg-white dark:bg-bark-800 rounded-xl border border-bark-200 dark:border-bark-700 hover:border-sage-400 dark:hover:border-sage-600 hover:shadow-sm transition-all text-center"
-                >
-                  <Image src="/images/brand/logo-icon.png" alt="" width={24} height={27} className="w-6 h-auto" aria-hidden />
-                  <span className="text-sm font-medium leading-snug group-hover:text-accent transition-colors" style={{ color: "var(--color-text-body)" }}>
-                    {cat.name}
-                  </span>
-                  <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>
-                    {cat.count} {cat.count === 1 ? "condition" : "conditions"}
-                  </span>
-                </Link>
-              ))}
+              {categories.map((cat, i) => {
+                const { color, tint, Icon } = getCategoryStyle(cat.slug);
+                return (
+                  <Link
+                    key={cat.slug}
+                    href={`/categories/${cat.slug}`}
+                    className={`group flex flex-col items-center gap-2 p-4 bg-surface-card rounded-xl border border-bark-200 dark:border-bark-700 card-hover hover:border-transparent transition-all text-center animate-fade-up stagger-${Math.min(i + 1, 4)}`}
+                  >
+                    <div
+                      className="w-11 h-11 rounded-full flex items-center justify-center transition-transform duration-base group-hover:scale-110"
+                      style={{ backgroundColor: tint }}
+                    >
+                      <Icon className="w-6 h-6" style={{ color }} aria-hidden />
+                    </div>
+                    <span className="text-sm font-medium leading-snug transition-colors" style={{ color: "var(--color-text-body)" }}>
+                      {cat.name}
+                    </span>
+                    <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+                      {cat.count} {cat.count === 1 ? "condition" : "conditions"}
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -151,7 +163,11 @@ export default function HomePage() {
             Recently Updated
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {recent.map((c) => <ConditionCard key={c.slug} condition={c} variant="compact" />)}
+            {recent.map((c, i) => (
+              <div key={c.slug} className={`animate-fade-up stagger-${Math.min(i + 1, 6)}`}>
+                <ConditionCard condition={c} variant="compact" />
+              </div>
+            ))}
           </div>
         </section>
       )}

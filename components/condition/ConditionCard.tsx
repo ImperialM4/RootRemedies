@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Clock, ArrowRight } from "lucide-react";
 import { formatReadingTime, formatDateShort } from "@/lib/utils";
+import { getCategoryStyle, categoryNameToSlug } from "@/lib/categories";
 import type { Condition } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -12,7 +13,8 @@ interface ConditionCardProps {
 }
 
 export function ConditionCard({ condition, className, variant = "default" }: ConditionCardProps) {
-  const { frontmatter, readingTime, excerpt, slug } = condition;
+  const { frontmatter, readingTime, slug } = condition;
+  const { color, tint, Icon } = getCategoryStyle(categoryNameToSlug(frontmatter.category));
 
   if (variant === "compact") {
     return (
@@ -24,22 +26,19 @@ export function ConditionCard({ condition, className, variant = "default" }: Con
           className
         )}
       >
-        <div className="relative w-16 h-16 rounded-md overflow-hidden bg-bark-100 dark:bg-bark-800 shrink-0 flex items-center justify-center">
+        <div className="relative w-16 h-16 rounded-md overflow-hidden shrink-0 flex items-center justify-center" style={{ backgroundColor: tint }}>
           {frontmatter.coverImage ? (
             <>
               <Image src={frontmatter.coverImage} alt={frontmatter.coverImageAlt ?? frontmatter.title}
                 fill className="object-cover" sizes="64px" />
               <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-black/55 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute bottom-1 right-1 w-3.5 h-3.5 rounded bg-white/95 flex items-center justify-center p-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <Image src="/images/brand/logo-icon.png" alt="" width={14} height={16} className="w-full h-auto" />
-              </div>
             </>
           ) : (
-            <Image src="/images/brand/logo-icon.png" alt="" width={32} height={36} className="w-8 h-auto opacity-80" />
+            <Icon className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" style={{ color }} aria-hidden />
           )}
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs text-accent font-medium mb-0.5">{frontmatter.category}</p>
+          <p className="text-xs font-medium mb-0.5" style={{ color }}>{frontmatter.category}</p>
           <p className="text-sm font-semibold text-primary truncate group-hover:text-accent transition-colors">
             {frontmatter.title}
           </p>
@@ -62,19 +61,16 @@ export function ConditionCard({ condition, className, variant = "default" }: Con
             fill className="object-cover transition-transform duration-slow group-hover:scale-105"
             sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" />
           <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/55 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-          <div className="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-md bg-white/95 flex items-center justify-center p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            <Image src="/images/brand/logo-icon.png" alt="" width={28} height={31} className="w-full h-auto" />
-          </div>
         </Link>
       ) : (
-        <Link href={`/conditions/${slug}`} className="block aspect-[16/9] bg-gradient-to-br from-sage-100 dark:from-sage-950/40 to-bark-100 dark:to-bark-800 flex items-center justify-center">
-          <Image src="/images/brand/logo-icon.png" alt="" width={56} height={62} className="w-12 h-auto opacity-80" />
+        <Link href={`/conditions/${slug}`} className="block aspect-[16/9] flex items-center justify-center overflow-hidden" style={{ backgroundColor: tint }}>
+          <Icon className="w-14 h-14 transition-transform duration-slow group-hover:scale-110" style={{ color }} aria-hidden />
         </Link>
       )}
 
       <div className="flex flex-col flex-1 p-5">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-semibold uppercase tracking-wide text-accent">
+          <span className="text-xs font-semibold uppercase tracking-wide" style={{ color }}>
             {frontmatter.category}
           </span>
           <span className="text-xs text-muted">{formatDateShort(frontmatter.lastUpdated)}</span>
@@ -86,7 +82,7 @@ export function ConditionCard({ condition, className, variant = "default" }: Con
           </h2>
         </Link>
 
-        <p className="text-sm text-muted leading-relaxed flex-1 mb-4 line-clamp-3">{excerpt}</p>
+        <p className="text-sm text-muted leading-relaxed flex-1 mb-4 line-clamp-3">{frontmatter.description}</p>
 
         <div className="flex items-center justify-between pt-3 border-t border-bark-100 dark:border-bark-800">
           <div className="flex items-center gap-1.5 text-xs text-muted">

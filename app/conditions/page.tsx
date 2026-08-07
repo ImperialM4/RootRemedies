@@ -59,7 +59,11 @@ export default async function ConditionsPage({ searchParams }: ConditionsPagePro
 
       {filtered.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filtered.map((c) => <ConditionCard key={c.slug} condition={c} />)}
+          {filtered.map((c, i) => (
+            <div key={c.slug} className={`animate-fade-up stagger-${Math.min(i + 1, 6)}`}>
+              <ConditionCard condition={c} />
+            </div>
+          ))}
         </div>
       ) : (
         <div className="py-20 text-center text-muted">
