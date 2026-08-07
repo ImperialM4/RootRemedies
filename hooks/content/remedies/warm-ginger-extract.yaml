@@ -1,0 +1,27 @@
+title: "Warm Ginger Extract"
+description: "A traditional ear remedy using warmed ginger juice for temporary discomfort relief."
+
+ingredients:
+  - item: "Fresh ginger juice"
+    amount: "1 teaspoon"
+  - item: "Cotton ball"
+    amount: "1"
+
+preparationSteps:
+  - step: 1
+    instruction: "Extract fresh ginger juice."
+  - step: 2
+    instruction: "Warm the ginger juice gently and allow it to cool until comfortably warm."
+
+usageInstructions: "Place a few drops into the ear and cover with a cotton ball."
+
+notes: "Ginger contains gingerols, compounds studied for their effects on inflammation and pain pathways."
+
+safetyNotes:
+  - "Do not use if you have a ruptured eardrum."
+  - "Do not use if experiencing bleeding, hearing loss, severe pain, or fever."
+
+image: "/images/remedies/warm-ginger-extract.jpg"
+imageAlt: "Warm ginger extract in a small glass bowl with a dropper and cotton ball, next to fresh ginger root."
+imageWidth: 1100
+imageHeight: 619

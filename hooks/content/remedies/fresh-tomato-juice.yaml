@@ -1,0 +1,18 @@
+title: "Fresh Tomato Juice"
+description: "A hydrating drink that may help keep stools softer and easier to pass."
+
+ingredients:
+  - item: "Fresh tomato juice"
+    amount: "1 cup"
+
+preparationSteps:
+  - step: 1
+    instruction: "Pour one cup of fresh tomato juice into a glass."
+
+usageInstructions: "Drink once every morning and again before bedtime."
+
+notes: "Tomatoes are naturally high in water and contain small amounts of fiber and potassium that support normal digestion."
+
+safetyNotes:
+  - "Choose low-sodium tomato juice if limiting salt intake."
+  - "Stop use if it causes stomach discomfort."

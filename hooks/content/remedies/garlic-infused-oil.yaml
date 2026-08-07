@@ -1,0 +1,26 @@
+title: "Garlic-Infused Oil"
+description: "A traditional ear remedy using garlic-infused oil for temporary ear discomfort relief."
+
+ingredients:
+  - item: "Oil"
+    amount: "1 tablespoon"
+  - item: "Garlic clove"
+    amount: "1"
+  - item: "Cotton ball"
+    amount: "1"
+
+preparationSteps:
+  - step: 1
+    instruction: "Heat the oil gently."
+  - step: 2
+    instruction: "Add crushed garlic and cook until lightly browned."
+  - step: 3
+    instruction: "Strain the oil and allow it to cool completely until only slightly warm."
+
+usageInstructions: "Place a few drops into the ear and gently cover with a cotton ball."
+
+notes: "Crushed garlic produces allicin, a compound studied for its antimicrobial properties."
+
+safetyNotes:
+  - "Do not use if you have a ruptured eardrum."
+  - "Do not use if there is bleeding, hearing loss, severe pain, or fever."

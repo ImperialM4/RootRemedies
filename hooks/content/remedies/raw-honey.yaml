@@ -1,0 +1,25 @@
+title: "Raw Honey"
+description: "A traditional ear remedy using raw honey for its natural antimicrobial properties."
+
+ingredients:
+  - item: "Raw honey"
+    amount: "1 teaspoon"
+  - item: "Cotton ball"
+    amount: "1"
+
+preparationSteps:
+  - step: 1
+    instruction: "No preparation is required."
+
+usageInstructions: "Traditionally, a few drops are placed into the affected ear before covering the opening with a cotton ball."
+
+notes: "Honey contains natural properties that have been studied for reducing bacterial growth."
+
+safetyNotes:
+  - "Do not use if you have a ruptured eardrum."
+  - "Do not use if there is bleeding, hearing loss, severe pain, or fever."
+
+image: "/images/remedies/raw-honey.jpg"
+imageAlt: "A jar of raw honey with a dropper and cotton ball, ready to use as ear drops."
+imageWidth: 1100
+imageHeight: 651

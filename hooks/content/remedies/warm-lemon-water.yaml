@@ -1,0 +1,22 @@
+title: "Warm Lemon Water"
+description: "A refreshing morning drink that supports hydration and digestion."
+
+ingredients:
+  - item: "Warm water"
+    amount: "1 cup"
+  - item: "Fresh lemon juice"
+    amount: "1 teaspoon"
+
+preparationSteps:
+  - step: 1
+    instruction: "Add the lemon juice to the warm water."
+  - step: 2
+    instruction: "Stir well before drinking."
+
+usageInstructions: "Drink every morning before breakfast."
+
+notes: "Warm water supports hydration, while citric acid in lemons may help stimulate digestive juices."
+
+safetyNotes:
+  - "Rinse your mouth afterward if you regularly drink lemon water to help protect tooth enamel."
+  - "Reduce the amount of lemon if it worsens acid reflux."

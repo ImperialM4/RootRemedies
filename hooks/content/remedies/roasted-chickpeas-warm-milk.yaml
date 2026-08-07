@@ -1,0 +1,27 @@
+title: "Roasted Chickpeas and Warm Milk"
+description: "A traditional food-based combination using roasted chickpeas and warm milk to support nutrition and comfort during illness."
+
+ingredients:
+  - item: "Roasted chickpeas"
+    amount: "A small handful"
+  - item: "Warm milk"
+    amount: "1 cup"
+
+preparationSteps:
+  - step: 1
+    instruction: "Warm the milk until it reaches a comfortable drinking temperature."
+  - step: 2
+    instruction: "Serve the warm milk alongside roasted chickpeas."
+
+usageInstructions: "Consume the roasted chickpeas and warm milk as a snack during recovery."
+
+notes: "This remedy focuses on supporting overall nutrition rather than directly clearing congestion."
+
+safetyNotes:
+  - "Avoid milk if you have a dairy allergy or intolerance."
+  - "Avoid any ingredient that causes an allergic reaction."
+
+image: "/images/remedies/roasted-chickpeas-warm-milk.jpg"
+imageAlt: "A cup of warm milk next to a jar and bowl of roasted chickpeas."
+imageWidth: 1100
+imageHeight: 828

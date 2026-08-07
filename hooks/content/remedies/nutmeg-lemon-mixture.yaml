@@ -1,0 +1,22 @@
+title: "Nutmeg and Lemon Mixture"
+description: "A traditional digestive mixture made with nutmeg and fresh lemon juice."
+
+ingredients:
+  - item: "Nutmeg powder"
+    amount: "1 tablespoon"
+  - item: "Lemon juice"
+    amount: "1 teaspoon"
+
+preparationSteps:
+  - step: 1
+    instruction: "Combine the nutmeg powder and lemon juice."
+  - step: 2
+    instruction: "Mix until evenly blended."
+
+usageInstructions: "Consume immediately after preparing."
+
+notes: "Nutmeg has been studied for its effects on digestion, while lemon juice helps stimulate digestive secretions."
+
+safetyNotes:
+  - "Do not consume excessive amounts of nutmeg."
+  - "Avoid if citrus fruits aggravate your stomach."

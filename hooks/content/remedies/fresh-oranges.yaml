@@ -1,0 +1,20 @@
+title: "Fresh Oranges"
+description: "A naturally fiber-rich fruit that helps support healthy digestion."
+
+ingredients:
+  - item: "Oranges"
+    amount: "2-3"
+
+preparationSteps:
+  - step: 1
+    instruction: "Wash the oranges thoroughly."
+  - step: 2
+    instruction: "Peel and separate into segments."
+
+usageInstructions: "Eat the oranges in the evening."
+
+notes: "Whole oranges provide dietary fiber and water, both of which help keep stool softer than drinking juice alone."
+
+safetyNotes:
+  - "Whole oranges are preferred over orange juice for their fiber content."
+  - "Limit intake if citrus fruits worsen acid reflux."

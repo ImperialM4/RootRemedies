@@ -1,0 +1,22 @@
+title: "Honey Milk"
+description: "A traditional drink that combines milk with honey for occasional constipation."
+
+ingredients:
+  - item: "Honey"
+    amount: "1 teaspoon"
+  - item: "Cold milk"
+    amount: "1 cup"
+
+preparationSteps:
+  - step: 1
+    instruction: "Pour the milk into a glass."
+  - step: 2
+    instruction: "Stir in the honey until fully dissolved."
+
+usageInstructions: "Drink immediately after mixing."
+
+notes: "For some people, lactose and honey's natural sugars may help encourage bowel movements."
+
+safetyNotes:
+  - "Avoid if you are lactose intolerant or dairy worsens your symptoms."
+  - "Do not give honey to children under 12 months of age."

@@ -1,0 +1,24 @@
+title: "Raisin Water"
+description: "A traditional soaked raisin drink that combines fiber with naturally occurring sorbitol."
+
+ingredients:
+  - item: "Black raisins"
+    amount: "1 handful"
+  - item: "Water"
+    amount: "1 cup"
+
+preparationSteps:
+  - step: 1
+    instruction: "Place the raisins in one cup of water and allow them to soak overnight."
+  - step: 2
+    instruction: "The following morning, crush the softened raisins in the same water."
+  - step: 3
+    instruction: "Strain the mixture."
+
+usageInstructions: "Drink the strained liquid before breakfast, then eat the softened raisins."
+
+notes: "Raisins naturally contain dietary fiber and sorbitol, a sugar alcohol that helps soften stool."
+
+safetyNotes:
+  - "Choose unsweetened raisins whenever possible."
+  - "People with diabetes should consume raisins in moderation."

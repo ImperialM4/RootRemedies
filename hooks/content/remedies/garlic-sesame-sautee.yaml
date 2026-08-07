@@ -1,0 +1,32 @@
+# garlic-sesame-sautee.yaml
+
+title: "Garlic and Sesame Oil Sauté"
+
+description: "A traditional preparation using lightly cooked garlic with sesame oil, often enjoyed as part of a meal during illness."
+
+ingredients:
+  - item: "Garlic cloves"
+    amount: "2-3 cloves"
+  - item: "Sesame oil"
+    amount: "1 teaspoon"
+  - item: "Salt (optional)"
+    amount: "A small pinch"
+
+preparationSteps:
+  - step: 1
+    instruction: "Peel and finely chop the garlic cloves."
+  - step: 2
+    instruction: "Warm sesame oil in a small pan."
+  - step: 3
+    instruction: "Lightly sauté the garlic until softened and fragrant."
+  - step: 4
+    instruction: "Add a small amount of salt if desired."
+
+usageInstructions: "Consume the sautéed garlic as part of a meal while recovering from illness."
+
+notes: "This remedy is intended as supportive nutrition and does not cure fever or infections."
+
+safetyNotes:
+  - "Avoid if you have a known allergy to garlic or sesame."
+  - "Do not consume excessive amounts of raw garlic, as it may cause stomach discomfort."
+  - "Stop use if irritation or allergic symptoms occur."

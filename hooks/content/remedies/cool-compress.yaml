@@ -1,0 +1,49 @@
+# cool-compress.yaml
+
+title: "Cool Compress"
+
+description: "A traditional external remedy using a cool, damp cloth to provide comfort during a fever."
+
+ingredients:
+
+  - item: "Clean washcloth"
+
+    amount: "1"
+
+  - item: "Cool water"
+
+    amount: "Enough to dampen the cloth"
+
+
+
+preparationSteps:
+
+  - step: 1
+
+    instruction: "Soak the clean washcloth in cool water."
+
+  - step: 2
+
+    instruction: "Wring out excess water so the cloth is damp but not dripping."
+
+  - step: 3
+
+    instruction: "Fold the cloth and prepare it for placement."
+
+
+
+usageInstructions: "Place the cool, damp cloth on the forehead, neck, or other areas of discomfort for several minutes. Re-dampen the cloth as needed."
+
+
+
+notes: "This remedy is intended to improve comfort and should not be used as a replacement for medical treatment."
+
+
+
+safetyNotes:
+
+  - "Do not use ice water or ice directly on the skin."
+
+  - "Remove the compress if it causes shivering or discomfort."
+
+  - "Do not apply to broken or irritated skin."

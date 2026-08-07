@@ -1,0 +1,25 @@
+title: "Fresh Basil Extract"
+description: "A traditional herbal remedy using fresh basil juice for ear discomfort."
+
+ingredients:
+  - item: "Fresh basil leaves"
+    amount: "Enough to produce 1 teaspoon of juice"
+  - item: "Cotton ball"
+    amount: "1"
+
+preparationSteps:
+  - step: 1
+    instruction: "Crush fresh basil leaves and extract the juice."
+
+usageInstructions: "Place a few drops into the ear and gently cover with a cotton ball."
+
+notes: "Basil contains compounds such as eugenol and rosmarinic acid that have been studied for biological activity."
+
+safetyNotes:
+  - "Do not use if you have a ruptured eardrum."
+  - "Avoid use if symptoms include bleeding, hearing loss, severe pain, or fever."
+
+image: "/images/remedies/fresh-basil-extract.jpg"
+imageAlt: "Fresh basil extract in a small glass bowl with a dropper and cotton ball, surrounded by fresh basil sprigs."
+imageWidth: 1100
+imageHeight: 829

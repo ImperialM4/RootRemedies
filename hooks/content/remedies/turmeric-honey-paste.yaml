@@ -1,0 +1,27 @@
+title: "Turmeric and Honey Paste"
+description: "A traditional mixture combining turmeric and honey to help soothe throat discomfort."
+
+ingredients:
+  - item: "Turmeric"
+    amount: "1 teaspoon"
+  - item: "Honey"
+    amount: "1 tablespoon"
+
+preparationSteps:
+  - step: 1
+    instruction: "Combine the turmeric and honey."
+  - step: 2
+    instruction: "Mix until a smooth, even paste forms."
+
+usageInstructions: "Slowly swallow small amounts, allowing the paste to coat the throat."
+
+notes: "Freshly prepared paste provides the best consistency."
+
+safetyNotes:
+  - "Do not give honey to children under 12 months of age."
+  - "People with allergies to honey or turmeric should avoid this remedy."
+
+image: "/images/remedies/turmeric-honey-paste.jpg"
+imageAlt: "Turmeric and honey paste mixed in a small glass bowl, with jars of turmeric powder and honey nearby."
+imageWidth: 1100
+imageHeight: 825

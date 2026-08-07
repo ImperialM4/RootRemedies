@@ -1,0 +1,29 @@
+title: "Ginger and Honey"
+description: "A traditional remedy combining ginger and honey to provide soothing comfort during coughing and throat irritation."
+
+ingredients:
+  - item: "Fresh ginger"
+    amount: "1 small piece (approximately 1 inch)"
+  - item: "Honey"
+    amount: "1-2 teaspoons"
+
+preparationSteps:
+  - step: 1
+    instruction: "Wash and peel the ginger."
+  - step: 2
+    instruction: "Grate or finely chop the ginger."
+  - step: 3
+    instruction: "Mix the ginger with honey and allow the flavors to combine."
+
+usageInstructions: "Consume a small amount of the ginger and honey mixture slowly."
+
+notes: "The strength of ginger can vary depending on the amount used."
+
+safetyNotes:
+  - "Avoid excessive ginger consumption if it causes stomach discomfort."
+  - "Do not give honey to children under 1 year of age."
+
+image: "/images/remedies/ginger-honey.jpg"
+imageAlt: "Grated fresh ginger and honey mixed in a bowl, with a jar of honey and ginger root nearby."
+imageWidth: 932
+imageHeight: 1100
