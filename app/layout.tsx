@@ -3,6 +3,7 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { NewsletterSignup } from "@/components/shared/NewsletterSignup";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main-content" className="flex-1">
             {children}
           </main>
+          <NewsletterSignup />
           <Footer />
         </ThemeProvider>
 

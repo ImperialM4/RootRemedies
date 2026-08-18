@@ -4,3 +4,4 @@ export { Breadcrumbs } from "./Breadcrumbs";
 export { WarningBox } from "./WarningBox";
 export { VideoEmbed } from "./VideoEmbed";
 export { ReferenceList } from "./ReferenceList";
+export { NewsletterSignup } from "./NewsletterSignup";
