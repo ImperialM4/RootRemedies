@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Leaf, ShieldCheck, BookOpen } from "lucide-react";
 import { getAllConditions, getFeaturedConditions, getAllCategories } from "@/lib/content";
 import { getCategoryStyle } from "@/lib/categories";
 import { ConditionCard } from "@/components/condition/ConditionCard";
+import { canonicalUrl } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  alternates: { canonical: canonicalUrl("/") },
+};
 
 export default function HomePage() {
   const featured        = getFeaturedConditions(6);

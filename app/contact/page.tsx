@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with RootRemedies.",
+  alternates: { canonical: canonicalUrl("/contact") },
 };
 
 export default function ContactPage() {

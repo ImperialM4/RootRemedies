@@ -18,6 +18,7 @@ import type { TrackEventPayload, SearchQueryStat, EngagementMetrics } from "./ty
 
 const DATA_DIR   = path.join(process.cwd(), "data");
 const EVENTS_FILE = path.join(DATA_DIR, "analytics-events.ndjson");
+const PROBE_FILE  = path.join(DATA_DIR, ".write-probe");
 
 // Ensure data/ directory exists
 function ensureDir() {
@@ -27,29 +28,67 @@ function ensureDir() {
 // ---------------------------------------------------------------------------
 // Write
 // ---------------------------------------------------------------------------
-export function appendEvent(payload: TrackEventPayload): void {
-  ensureDir();
-  const line = JSON.stringify({
-    ...payload,
-    ts: new Date().toISOString(),
-  }) + "\n";
-  fs.appendFileSync(EVENTS_FILE, line, "utf-8");
+// Returns whether the event was actually persisted. On Vercel (and most
+// serverless hosts) the deployed filesystem is read-only outside /tmp, so
+// this can legitimately fail in production — that's expected, not a bug,
+// and callers should treat it as "not persisted" rather than crash the
+// request. See isEventStoreWritable() for surfacing this honestly in the
+// admin dashboard instead of silently showing zeros forever.
+export function appendEvent(payload: TrackEventPayload): boolean {
+  try {
+    ensureDir();
+    const line = JSON.stringify({
+      ...payload,
+      ts: new Date().toISOString(),
+    }) + "\n";
+    fs.appendFileSync(EVENTS_FILE, line, "utf-8");
+    return true;
+  } catch (err) {
+    console.warn(
+      "[RootRemedies] Could not persist analytics event — filesystem is likely " +
+      "read-only in this environment (expected on Vercel production unless a " +
+      "persistent store is configured). Event was dropped:",
+      err instanceof Error ? err.message : err
+    );
+    return false;
+  }
+}
+
+/**
+ * Cheaply checks whether data/ is actually writable in the current runtime.
+ * Used to show an honest banner in /admin rather than letting search-query /
+ * engagement metrics sit at zero with no explanation.
+ */
+export function isEventStoreWritable(): boolean {
+  try {
+    ensureDir();
+    fs.writeFileSync(PROBE_FILE, "ok", "utf-8");
+    fs.unlinkSync(PROBE_FILE);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 // ---------------------------------------------------------------------------
 // Read all events
 // ---------------------------------------------------------------------------
 function readEvents(): (TrackEventPayload & { ts: string })[] {
-  if (!fs.existsSync(EVENTS_FILE)) return [];
-  const raw = fs.readFileSync(EVENTS_FILE, "utf-8");
-  return raw
-    .split("\n")
-    .filter(Boolean)
-    .map((line) => {
-      try { return JSON.parse(line); }
-      catch { return null; }
-    })
-    .filter(Boolean);
+  try {
+    if (!fs.existsSync(EVENTS_FILE)) return [];
+    const raw = fs.readFileSync(EVENTS_FILE, "utf-8");
+    return raw
+      .split("\n")
+      .filter(Boolean)
+      .map((line) => {
+        try { return JSON.parse(line); }
+        catch { return null; }
+      })
+      .filter(Boolean);
+  } catch (err) {
+    console.warn("[RootRemedies] Could not read analytics events file:", err instanceof Error ? err.message : err);
+    return [];
+  }
 }
 
 // ---------------------------------------------------------------------------

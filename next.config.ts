@@ -22,8 +22,13 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 
   images: {
+    // Only allow the remote hosts the app actually requests images from.
+    // Everything else (condition covers, remedy photos) is served locally
+    // from /public/images — a wildcard here would let anyone route arbitrary
+    // attacker-chosen URLs through the image optimizer for no functional gain.
+    // Add a new entry here if a future component needs another remote host.
     remotePatterns: [
-      { protocol: "https", hostname: "**" },
+      { protocol: "https", hostname: "img.youtube.com" }, // YouTube thumbnails, see lib/utils.ts
     ],
   },
 

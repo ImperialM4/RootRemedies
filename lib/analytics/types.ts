@@ -117,6 +117,12 @@ export interface DashboardData {
   engagement:   EngagementMetrics;
   searches:     SearchQueryStat[];
   generatedAt:  string;   // ISO timestamp
+  // Whether data/analytics-events.ndjson is actually writable in this
+  // runtime. False on Vercel production (read-only filesystem outside /tmp)
+  // unless a persistent store has been wired in — see lib/analytics/events.ts.
+  // Used to show an honest banner instead of letting search/engagement
+  // metrics sit at zero with no explanation.
+  localEventStoreWritable: boolean;
 }
 
 // Period options for the dashboard filter

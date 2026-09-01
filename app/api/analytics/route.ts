@@ -4,7 +4,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { getOverview, getTimeseries, getTopPages, getTopCountries, getTrafficSources } from "@/lib/analytics/plausible";
-import { getSearchStats, getEngagementMetrics } from "@/lib/analytics/events";
+import { getSearchStats, getEngagementMetrics, isEventStoreWritable } from "@/lib/analytics/events";
 import { getContentMetrics } from "@/lib/analytics/content-metrics";
 import type { DashboardData, AnalyticsPeriod } from "@/lib/analytics/types";
 
@@ -40,6 +40,7 @@ export async function GET(req: NextRequest) {
     engagement,
     searches,
     generatedAt: new Date().toISOString(),
+    localEventStoreWritable: isEventStoreWritable(),
   };
 
   return NextResponse.json(data, {

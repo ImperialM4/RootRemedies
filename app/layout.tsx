@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { NewsletterSignup } from "@/components/shared/NewsletterSignup";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import "@/styles/globals.css";
+
+// Single source of truth for the site's canonical public URL — falls back to
+// the production domain so local dev / previews without the env var set
+// still produce valid (if not perfectly accurate) absolute URLs.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rootremedies.com";
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type:        "website",
     locale:      "en_US",
-    url:         "https://rootremedies.com",
+    url:         SITE_URL,
     siteName:    "RootRemedies",
     title:       "RootRemedies — Traditional Home Remedies",
     description: "Traditional home remedies documented by Maanav Kakkad. Not medical advice.",
@@ -28,7 +31,7 @@ export const metadata: Metadata = {
     title:       "RootRemedies",
     description: "Traditional home remedies. Not medical advice.",
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://rootremedies.com"),
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -38,13 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col antialiased bg-surface text-body transition-colors duration-base">
         <ThemeProvider>
-          <a href="#main-content" className="skip-link">Skip to main content</a>
-          <Navbar />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <NewsletterSignup />
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
 
         {/* Plausible analytics — privacy-friendly, no cookies, GDPR compliant.

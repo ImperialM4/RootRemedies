@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
   description: "Medical and legal disclaimer for RootRemedies.",
+  alternates: { canonical: canonicalUrl("/disclaimer") },
 };
 
 export default function DisclaimerPage() {

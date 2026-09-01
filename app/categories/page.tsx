@@ -4,10 +4,12 @@ import { ArrowRight } from "lucide-react";
 import { getAllCategories } from "@/lib/content";
 import { getCategoryStyle } from "@/lib/categories";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Categories",
   description: "Browse traditional home remedies organized by health category.",
+  alternates: { canonical: canonicalUrl("/categories") },
 };
 
 export default function CategoriesPage() {

@@ -3,10 +3,15 @@ import Link from "next/link";
 import { getAllConditions, getAllTags } from "@/lib/content";
 import { ConditionCard } from "@/components/condition/ConditionCard";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "All Conditions",
   description: "Browse all documented traditional home remedies by condition.",
+  // Tag/category filters on this page are query params (?tag=, ?category=) —
+  // canonicalize them all to the unfiltered listing so search engines don't
+  // treat each filtered view as separate duplicate content.
+  alternates: { canonical: canonicalUrl("/conditions") },
 };
 
 interface ConditionsPageProps {

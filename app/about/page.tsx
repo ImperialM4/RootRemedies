@@ -5,10 +5,12 @@ import path from "path";
 import matter from "gray-matter";
 import { getMDXComponents } from "@/components/mdx/MDXComponents";
 import { remarkPlugins, rehypePlugins } from "@/lib/mdx-plugins";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About",
   description: "Why Maanav Kakkad started RootRemedies — the mission behind the project.",
+  alternates: { canonical: canonicalUrl("/about") },
 };
 
 export default function AboutPage() {

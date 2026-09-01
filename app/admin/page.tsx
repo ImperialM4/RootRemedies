@@ -269,6 +269,18 @@ export default function AdminDashboard() {
 
             {/* Engagement */}
             <Section title="Engagement">
+              {!data.localEventStoreWritable && (
+                <div className="mb-3 bg-amber-950/40 border border-amber-800/60 rounded-lg px-3 py-2.5">
+                  <p className="text-xs text-amber-300 leading-relaxed">
+                    Search terms, video plays, scroll depth, and helpful votes
+                    aren&apos;t being recorded in this environment — the local event
+                    store isn&apos;t writable here (expected on Vercel production
+                    unless a persistent store like Vercel KV, Upstash, or Postgres
+                    is wired in). Numbers below may be stale or empty. Traffic
+                    stats above are unaffected — those come from Plausible.
+                  </p>
+                </div>
+              )}
               <div className="bg-bark-900 border border-bark-700 rounded-xl p-4 space-y-4">
                 <div className="grid grid-cols-2 gap-3">
                   {[
@@ -374,6 +386,11 @@ export default function AdminDashboard() {
 
           {/* ── Search queries ──────────────────────────────────────── */}
           <Section title="Search Queries">
+            {!data.localEventStoreWritable && (
+              <p className="text-xs text-amber-400 mb-2">
+                Not being recorded in this environment — see the note under Engagement.
+              </p>
+            )}
             <div className="bg-bark-900 border border-bark-700 rounded-xl overflow-hidden">
               {data.searches.length > 0 ? (
                 <table className="w-full text-sm">
@@ -443,7 +460,9 @@ export default function AdminDashboard() {
               <h3 className="text-sm font-semibold text-sage-400 mb-2">Set up Plausible Analytics</h3>
               <p className="text-xs text-bark-400 mb-3">
                 Traffic data (visitors, countries, sources) requires a Plausible account.
-                Internal events (search, scroll depth, helpful votes) work without it.
+                Internal events (search, scroll depth, helpful votes) need a writable
+                local filesystem, which isn&apos;t available on Vercel production unless
+                a persistent store is wired in — see the note under Engagement above.
               </p>
               <ol className="text-xs text-bark-400 space-y-1 list-decimal list-inside">
                 <li>Create a free account at <a href="https://plausible.io" target="_blank" rel="noopener noreferrer" className="text-sage-400 underline">plausible.io</a></li>
