@@ -10,9 +10,18 @@
 :root {
   --color-bg:           #F1E9D8;
   --color-bg-subtle:    #E4D7BA;
-  --color-bg-card:      #FFFFFF;
-  --color-border:       #C7B48D;
-  --color-border-subtle:#DCCEA8;
+  /* Was pure #FFFFFF — a stark white card felt like a glare next to this
+     warm cream page. Matches the "white" override in tailwind.config.ts so
+     every bg-white/text-white utility across the site (navbar, search bar,
+     hero badge, cards) stays visually consistent with this token. */
+  --color-bg-card:      #FDFBF6;
+  /* Both border tokens were previously too pale to actually read as a
+     boundary (~1.7:1 and ~2:1 contrast against the page — well under the
+     3:1 WCAG recommends for UI component edges), so cards and dividers had
+     no visible edge and just abruptly met the brighter card surface instead
+     of being softly framed by it. Darkened just enough to clear that bar. */
+  --color-border:       #8C7650;
+  --color-border-subtle:#B7A179;
 
   --color-text-primary: #1C1712;
   --color-text-body:    #3D3228;
