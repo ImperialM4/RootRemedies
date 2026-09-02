@@ -8,6 +8,7 @@ import { ConditionHeader } from "@/components/condition/ConditionHeader";
 import { TableOfContents } from "@/components/condition/TableOfContents";
 import { RelatedConditions } from "@/components/condition/RelatedConditions";
 import { ArticleHelpful } from "@/components/shared/ArticleHelpful";
+import { NewsletterSignup } from "@/components/shared/NewsletterSignup";
 import { ScrollDepthTracker } from "@/components/shared/ScrollDepthTracker";
 import { remarkPlugins, rehypePlugins } from "@/lib/mdx-plugins";
 import { canonicalUrl, SITE_URL } from "@/lib/seo";
@@ -118,6 +119,8 @@ export default async function ConditionPage({
           {related.length > 0 && <RelatedConditions conditions={related} />}
 
           <ArticleHelpful slug={slug} />
+
+          <NewsletterSignup className="border-0 bg-transparent dark:bg-transparent px-0 mt-10" />
         </article>
 
         {toc.length > 0 && (

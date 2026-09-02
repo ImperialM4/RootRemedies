@@ -4,6 +4,7 @@ import { ArrowRight, Leaf, ShieldCheck, BookOpen } from "lucide-react";
 import { getAllConditions, getFeaturedConditions, getAllCategories } from "@/lib/content";
 import { getCategoryStyle } from "@/lib/categories";
 import { ConditionCard } from "@/components/condition/ConditionCard";
+import { NewsletterSignup } from "@/components/shared/NewsletterSignup";
 import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -161,6 +162,8 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      <NewsletterSignup />
 
       {/* ── Recent ───────────────────────────────────────────────────────── */}
       {recent.length > 0 && (
