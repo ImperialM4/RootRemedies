@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
-import { Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NewsletterSignupProps {
@@ -17,22 +16,13 @@ interface NewsletterSignupProps {
 // dashboard (Audience → Subscribe forms) — swapped based on the site's
 // active theme.
 //
-// IMPORTANT — this only renders correctly if both forms' "Type" /
-// "Placement" setting in beehiiv is set to "Inline". Beehiiv's own embed
-// script (subscribe-forms.beehiiv.com/v3/loader.js) fetches each form's
-// config from beehiiv and branches on that config's render_type:
-//   - "inline"  → mounts the form as a normal child right where our
-//                 <script> tag sits, at width:100% of its container.
-//   - "popup" / "slide_in_left" / "slide_in_right" / "sticky_top" /
-//     "sticky_bottom" → mounts it as a position:fixed overlay appended
-//                 directly to <body>, sized to its own content width,
-//                 completely ignoring where our component is placed.
-// The earlier version of this component looked "stuck at the bottom and
-// not full-width" because the dark-theme form was (and possibly still is)
-// configured with one of those overlay types in beehiiv, not "Inline" — a
-// dashboard setting, not something this component can override. If it still
-// doesn't render in place, check that setting on both forms before assuming
-// it's a code issue.
+// Both forms should stay set to "Inline" as their Type/Placement in beehiiv.
+// Beehiiv's loader script (subscribe-forms.beehiiv.com/v3/loader.js)
+// branches on that per-form setting: "inline" mounts the form as a normal
+// child right where our <script> tag sits, at width:100% of its container —
+// anything else (Popup, Slide-in, Sticky Bar) mounts it as a position:fixed
+// overlay appended to <body> instead, ignoring wherever this component is
+// placed on the page.
 const BEEHIIV_FORM_ID_LIGHT = "b41635fd-f0d3-4e4e-9635-f4a0f97b574b";
 const BEEHIIV_FORM_ID_DARK  = "8d1a115e-0f77-475a-999d-69c1a8e2de9a";
 
@@ -98,8 +88,11 @@ function BeehiivEmbed({ className }: { className?: string }) {
 
 /**
  * Site-wide newsletter signup, backed by beehiiv's embedded subscribe form.
- * Rendered as a full section by default; pass `bare` to embed just the form
- * elsewhere (e.g. inside an article).
+ * The form itself (heading, description, input, button) is entirely
+ * configured in the beehiiv dashboard — this component doesn't add any of
+ * its own heading/copy on top of it, just a consistent section
+ * background/spacing to match the rest of the page. Pass `bare` to drop
+ * even that and embed just the form itself (e.g. inside a sidebar).
  */
 export function NewsletterSignup({ className, bare = false }: NewsletterSignupProps) {
   if (bare) {
@@ -114,26 +107,7 @@ export function NewsletterSignup({ className, bare = false }: NewsletterSignupPr
       )}
     >
       <div className="site-container py-14">
-        <div className="max-w-xl mx-auto text-center">
-          <div
-            className="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-4"
-            style={{ backgroundColor: "var(--color-accent-light)" }}
-          >
-            <Mail className="w-5 h-5" style={{ color: "var(--color-accent)" }} aria-hidden />
-          </div>
-          <h2
-            className="font-serif text-2xl font-semibold mb-2"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            Get remedies in your inbox
-          </h2>
-          <p
-            className="text-sm leading-relaxed mb-6"
-            style={{ color: "var(--color-text-muted)" }}
-          >
-            New remedies, seasonal picks, and traditional-medicine notes — no spam, unsubscribe anytime.
-          </p>
-
+        <div className="max-w-xl mx-auto">
           <BeehiivEmbed />
         </div>
       </div>
