@@ -12,31 +12,35 @@ interface NewsletterSignupProps {
 }
 
 // Beehiiv's own embedded subscribe form (created in beehiiv → Audience →
-// Subscribe forms). The loader script mounts an iframe into this container;
+// Subscribe forms). The v3 loader script reads its target form from its own
+// `data-beehiiv-form` attribute and mounts the real subscribe form itself —
 // all subscription handling, validation, and success/error states are
-// managed by beehiiv inside that iframe, so no API route or credentials are
-// needed on our side.
+// handled by beehiiv, so no API route or credentials are needed on our side.
+// Wrapping both scripts in a container div keeps whatever beehiiv injects
+// contained inside our styled layout instead of landing wherever in the DOM.
 //
 // `next/script` with strategy="afterInteractive" loads the script on the
 // client after the page is interactive — the same approach already used for
 // Plausible in app/layout.tsx — so it never runs during SSR and can't cause
-// a hydration mismatch.
+// a hydration mismatch. Attributes below are copied exactly from beehiiv's
+// provided embed snippet; don't change the form id or script URLs without
+// grabbing a fresh snippet from the beehiiv dashboard.
 function BeehiivEmbed({ className }: { className?: string }) {
   return (
-    <div className={cn("w-full", className)}>
-      <div data-beehiiv-form="0f93fe72-94c7-4e2d-894e-2222abfc75d4" />
+    <div className={cn("w-full beehiiv-embed", className)}>
       <Script
         id="beehiiv-subscribe-loader"
-        src="https://subscribe-forms.beehiiv.com/v3/loader.js"
-        data-beehiiv-form="0f93fe72-94c7-4e2d-894e-2222abfc75d4"
-        strategy="afterInteractive"
         async
+        src="https://subscribe-forms.beehiiv.com/v3/loader.js"
+        data-beehiiv-form="8d1a115e-0f77-475a-999d-69c1a8e2de9a"
+        strategy="afterInteractive"
       />
       <Script
         id="beehiiv-attribution"
+        type="text/javascript"
+        async
         src="https://subscribe-forms.beehiiv.com/attribution.js"
         strategy="afterInteractive"
-        async
       />
     </div>
   );

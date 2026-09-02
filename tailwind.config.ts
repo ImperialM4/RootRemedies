@@ -11,6 +11,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Tailwind's built-in "white" is pure #FFFFFF by default. This site's
+        // light theme is a warm cream palette (see --color-bg in globals.css),
+        // and pure white surfaces (navbar, cards, search bar, hero badge —
+        // over a dozen places use bg-white/text-white) read as a harsh, cold
+        // glare next to it instead of a cohesive "paper" tone. Overriding the
+        // token here — rather than hunting down every bg-white/70, bg-white/90
+        // etc. individually — fixes all of them at once, including opacity
+        // modifiers, since Tailwind resolves those from this same value.
+        white: "#FDFBF6",
         bark: {
           50:  "#F7F4F0", 100: "#DCCEA8", 200: "#C7B48D", 300: "#C2B09A",
           400: "#A8917A", 500: "#8C7460", 600: "#6D5A4A", 700: "#4F4134",
